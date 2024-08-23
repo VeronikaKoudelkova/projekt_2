@@ -18,14 +18,16 @@ def generation_of_secret_number():
 
     secret_num = list()
     
+    random_number = str(random.randrange(1, 10))
+    secret_num.append(random_number)
+
     while len(secret_num) != 4:
         random_number = str(random.randrange(0, 10))
-        if "0" in random_number[0]:                     # nevim, jak osetrit kod, abych se vyvarovala 0 na pocatku nahodneho cisla
-            continue                                    # takto mi to vyhodi vsechny nuly a nahodne cislo se generuje bez nul..
         for number in random_number:
             if number not in secret_num:
                 secret_num.append(number)
-            
+
+      
     return secret_num
 
 
